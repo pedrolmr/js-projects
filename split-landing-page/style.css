@@ -1,6 +1,8 @@
-:roote{
+:root{
     --left-bg-color: rgba(87, 84, 236, 0.7);
     --right-bg-color: rgba(43, 43, 43, 0.8);
+    --hover-width: 75%;
+    --other-width: 25%;
 }
 body{
     background-color: aqua;
@@ -59,6 +61,12 @@ h1{
     height: 100%;
     background-color: var(--left-bg-color);
 }
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before{
+    transition: all 500ms ease-in-out;
+}
 .split.right{
     right:0;
     background: url("https://www.gamespot.com/a/uploads/original/1574/15747411/3756082-xbox-series-x-review-promothumb.jpg");
@@ -71,4 +79,20 @@ h1{
     width: 100%;
     height: 100%;
     background-color: var(--right-bg-color);
+}
+
+.hover-left .left{
+    width: var(--hover-width);
+}
+
+.hover-left .right{
+    width: var(--other-width);
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+
+.hover-right .left{
+    width: var(--other-width);
 }
